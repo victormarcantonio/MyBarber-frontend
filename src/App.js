@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import{Route, Switch} from 'react-router-dom';
+import '../src/styles/scss/app.scss';
+import Header from './components/UI/Header/Header';
+import Sidebar from './components/UI/Sidebar/Sidebar';
+import DashBoard from './containers/DashBoard/DashBoard';
+import ListarServico from './containers/Servico/ListarServico';
+import CadastrarServico from './containers/Servico/CadastrarServico';
+import ListarFuncionarios from './containers/Funcionarios/ListarFuncionarios';
+import CadastrarFuncionario from './containers/Funcionarios/CadastrarFuncionario';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Header/>
+       <Sidebar/>
+       <Route path="/" exact component={DashBoard}/>
+       <Route path="/listarServico" component={ListarServico}/>
+       <Route path="/cadastrarServico" component={CadastrarServico}/>
+       <Route path="/listarFuncionario" component={ListarFuncionarios}/>
+       <Route path="/cadastrarFuncionario" component={CadastrarFuncionario}/>
     </div>
   );
 }
