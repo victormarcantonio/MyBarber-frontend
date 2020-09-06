@@ -1,12 +1,29 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import logo from '../../../assets/Images/mybarb.png';
+import Sidebar from '../Sidebar/Sidebar';
+import { slide as Menu } from 'react-burger-menu';
+import $ from 'jquery';
+
 
 import {faCog, faUser, faLg} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-const header = (props) => (
-  <>
+function Header () {
+
+  const[toggle, setToggle] = useState();
+
+  useEffect(() => {
+    $('[data-toggle="sidebar"]').click(function(event) {
+      event.preventDefault();
+      $('.app').toggleClass('sidenav-toggled');
+    });
+  },[]);
+
+
+  
+
+  return(
  <header className="app-header"><a className="app-header__logo" href="/">
  MyBarber<img className="ml-1"  src={logo} width="15" height="auto"  alt=""></img>
 </a>
@@ -21,9 +38,8 @@ const header = (props) => (
         </li>
       </ul>	
 </header>
-     </>
-)
+  )}
 
 
-export default header;
+export default Header;
 

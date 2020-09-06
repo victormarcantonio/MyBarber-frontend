@@ -19,7 +19,6 @@ function CadastrarFuncionario() {
                 <div className="app-title">
                     <div>
                         <h1><i className="fa fa-th-list">
-                            <Icons icon={faList} />
                         </i> Funcionários</h1>
                         <p>Cadastrar funcionário</p>
                     </div>
@@ -87,9 +86,9 @@ function CadastrarFuncionario() {
                             </div>
                             <Footer className="tile-footer d-flex justify-content-end">
                                 <Link to="/listarFuncionario" style={{ textDecoration: "none" }}>
-                                    <Button type="reset" className="btn btn-secondary btn-cancelar" title="Click para cancelar" form="form-servico"><i className="fa fa-fw fa-lg fa-times-circle"><Icons icon={faTimesCircle} /></i>Cancelar</Button>&nbsp;&nbsp;&nbsp;
+                                    <Button type="reset" className="btn btn-secondary btn-cancelar" title="Click para cancelar" form="form-servico"><i className="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</Button>&nbsp;&nbsp;&nbsp;
                                 </Link>
-                                <Button type="submit" className="btn btn-primary btn-salvar" title="Clique para salvar um serviço" form="form-servico"><i className="fa fa-fw fa-lg fa-check-circle"><Icons icon={faCheckCircle} /></i>Salvar</Button>
+                                <Button type="submit" className="btn btn-primary btn-salvar" title="Clique para salvar um serviço" form="form-servico"><i className="fa fa-fw fa-lg fa-check-circle"></i>Salvar</Button>
                             </Footer>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
 
 import { faThList, faList, faTimesCircle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -11,9 +11,27 @@ import Label from '../../components/UI/Label/Label';
 import Input from '../../components/UI/Input/Input';
 import Footer from '../../components/UI/Footer/Footer';
 import Button from '../../components/UI/Button/Button';
+import CurrencyInput from 'react-currency-masked-input';
+import IntlCurrencyInput from "react-intl-currency-input"
+
 
 
 function CadastrarServico() {
+
+
+    const currencyConfig = {
+        locale: "pt-BR",
+        formats: {
+          number: {
+            BRL: {
+              style: "currency",
+              currency: "BRL",
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            },
+          },
+        },
+      };
 
     return (
         <>
@@ -22,7 +40,6 @@ function CadastrarServico() {
                     <div>
 
                         <h1><i className="fa fa-th-list">
-                            <Icons icon={faList} />
                         </i> Serviços</h1>
                         <p>Todas os serviços cadastrados na barbearia</p>
                     </div>
@@ -40,11 +57,11 @@ function CadastrarServico() {
                                     </FormGroup>
                                     <FormGroup className="form-group">
                                         <Label className="control-label" for="valor" >Valor R$</Label>
-                                        <Input className="form-control" type="text" id="valor" placeholder="00,00" datamask="000,00" />
+                                        <IntlCurrencyInput currency="BRL" config={currencyConfig} className="form-control" type="text" id="valor" placeholder="00,00" max={999}/>
                                     </FormGroup>
                                     <FormGroup className="form-group">
                                         <Label className="control-label" for="tempo" >Tempo</Label>
-                                        <Input className="form-control" type="text" id="tempo" placeholder="--:--" autofocus="autofocus" />
+                                        <Input className="form-control" type="text" id="tempo" placeholder="--:--" mask="99:99" autofocus="autofocus" />
                                     </FormGroup>
                                 </Form>
                             </div>
@@ -61,5 +78,6 @@ function CadastrarServico() {
         </>
     )
 }
+
 
 export default CadastrarServico;

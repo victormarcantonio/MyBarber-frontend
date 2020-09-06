@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const sidebar = () => (
+    
+    
     <aside className="app-sidebar">
         <div className="app-sidebar__user"><img className="app-sidebar__user-avatar" src={NoFoto} style={{ maxWidth: '48px', maxHeight: '48px', }} alt="User Image"></img>
             <div>
@@ -19,22 +21,22 @@ const sidebar = () => (
         </div>
         <ul className="app-menu">
             <MenuItem path="/" exact name="DashBoard">
-                <FontAwesomeIcon icon={faTachometerAlt} />
+                 <i class="app-menu__icon fa fa-dashboard"></i>
             </MenuItem>
             <MenuItem path="/agenda" name="Agenda">
-                <FontAwesomeIcon icon={faCalendar} />
+                <i class="app-menu__icon fa fa-calendar"></i>
             </MenuItem>
             <MenuItem path="/barbearia" name="Barbearia">
-                <FontAwesomeIcon icon={faBuilding} />
+            <i class="app-menu__icon fa fa-building"></i>
             </MenuItem>
-            <MenuItem path="/clientes" name="Clientes">
-                <FontAwesomeIcon icon={faAddressBook} />
+            <MenuItem path="/listarCliente" name="Clientes">
+            <i class="app-menu__icon fa fa-address-book"></i>
             </MenuItem>
             <MenuItem path="/listarFuncionario" name="Funcionários">
-                <FontAwesomeIcon icon={faUsers} />
+                <i class="app-menu__icon fa fa-users"></i>
             </MenuItem>
             <MenuItem path="/listarServico" name="Serviços">
-                <FontAwesomeIcon icon={faCut} />
+               <i class="app-menu__icon fa fa-cut"></i>
             </MenuItem>
         </ul>
     </aside>

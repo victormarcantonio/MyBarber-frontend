@@ -8,7 +8,6 @@ import Icons from '../../UI/Icons/Icons';
 const breadCumb = (props) => (
         <ul className="app-breadcrumb breadcrumb ">
             <li className="breadcrumb-item"><i className="fa fa-home fa-lg">
-            <FontAwesomeIcon icon={faHome} />
                 </i>
                 </li>
             <li className="breadcrumb-item "><a href="#">{props.name}</a></li>

@@ -15,7 +15,6 @@ class DashBoard extends Component {
 		<div>
 			<h1>
 				<i class="fa fa-dashboard">
-                    <Icons icon={faTachometerAlt}/>
                     </i> Dashboard
 			</h1>
 		</div>
